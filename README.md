@@ -17,9 +17,9 @@ wget http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-connectors/native/1.2
 cd /usr/share/tomcat/bin/tomcat-native-1.2.16-src/native
 ./configure --with-apr=/usr/bin/apr-1-config --with-java-home=/usr/lib/jvm/java-1.8.0-openjdk --with-os-type=include/linux --with-ssl=yes --prefix=/usr/share/tomcat
 ```
-    - Make sure the JDK specified by `--with-java-home` is an actual JDK and not just a JRE!
+NOTE: Make sure the JDK specified by `--with-java-home` is an actual JDK and not just a JRE!
 * Fix the include directory path in the generated makefile  
-    - In the `INCLUDES` directive change `-I/usr/lib/jvm/java-1.8.0-openjdk/include/include/linux` to `-I/usr/lib/jvm/java-1.8.0-openjdk/include/linux`  
+    - In the `INCLUDES` directive change `-I/usr/lib/jvm/java-1.8.0-openjdk/include/include/linux` to `-I/usr/lib/jvm/java-1.8.0-openjdk/include/linux`    
 * Compile the code  
 ```
 make && make install
