@@ -24,7 +24,7 @@ NOTE: Make sure the JDK specified by `--with-java-home` is an actual JDK and not
 ```
 make && make install
 ```
-    - There should now be a `libtcnative` shared library in `/usr/share/tomcat/lib`
+There should now be a `libtcnative` shared library in `/usr/share/tomcat/lib`
 * Get tomcat to load the shared library. Create a file, `/usr/share/tomcat/conf/conf.d/loadapr.conf`, with the following lines:  
 ```
 # Use JAVA_OPTS to set java.library.path for libtcnative.so  
