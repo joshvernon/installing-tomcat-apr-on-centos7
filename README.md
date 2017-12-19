@@ -1,4 +1,4 @@
-## Installing APR native library on tomcat - CentOS 7
+## Installing tomcat APR native library - CentOS 7, Tomcat 7, & Java 8
 * Install GNU Development tools  
 ```
 yum group install "Development Tools"
