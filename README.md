@@ -30,6 +30,7 @@ There should now be a `libtcnative` shared library in `/usr/share/tomcat/lib`
 # Use JAVA_OPTS to set java.library.path for libtcnative.so  
 JAVA_OPTS="-Djava.library.path=$CATALINA_HOME/lib"
 ```
+We need to use a separate config file in `conf/conf.d` because the root config file at `conf/tomcat.conf` doesn't support shell expansion.
 * Start tomcat. The APR library should've been loaded!
 
 Helpful links:  [Apache Tomcat Native Library documentation](https://tomcat.apache.org/native-doc/)
