@@ -31,7 +31,15 @@ There should now be a `libtcnative` shared library in `/usr/share/tomcat/lib`
 JAVA_OPTS="-Djava.library.path=$CATALINA_HOME/lib"
 ```
 We need to use a separate config file in `conf/conf.d` because the root config file at `conf/tomcat.conf` doesn't support shell expansion.
-* Start tomcat. The APR library should've been loaded!
+* Start tomcat. The APR library should've been loaded!  
+```
+Dec 19, 2017 6:02:01 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: Loaded APR based Apache Tomcat Native library 1.2.16 using APR version 1.4.8.
+Dec 19, 2017 6:02:01 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFO: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+Dec 19, 2017 6:02:01 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFO: OpenSSL successfully initialized (OpenSSL 1.0.2k-fips  26 Jan 2017)
+```
 
 Helpful links:  [Apache Tomcat Native Library documentation](https://tomcat.apache.org/native-doc/)
 
