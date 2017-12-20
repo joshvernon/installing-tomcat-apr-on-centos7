@@ -1,29 +1,29 @@
 ## Installing tomcat APR native library - CentOS 7, Tomcat 7, & Java 8
 * Install GNU Development tools  
 ```
-yum group install "Development Tools"
+# yum group install "Development Tools"
 ```
 * Install development header packages for APR and openssl  
 ```
-yum install openssl-devel apr-devel
+# yum install openssl-devel apr-devel
 ```
 * Download and extract the source code for the Apache Tomcat Native Library (because we installed Tomcat with yum, the source tarball is not present in `$CATALINA_HOME/bin`)  
 ```
-cd /usr/share/tomcat/bin
-curl -O http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-connectors/native/1.2.16/source/tomcat-native-1.2.16-src.tar.gz
-tar -xvzf tomcat-native-1.2.16-src.tar.gz
+# cd /usr/share/tomcat/bin
+# curl -O http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-connectors/native/1.2.16/source/tomcat-native-1.2.16-src.tar.gz
+# tar -xvzf tomcat-native-1.2.16-src.tar.gz
 ```
 * Configure  
 ```
-cd /usr/share/tomcat/bin/tomcat-native-1.2.16-src/native
-./configure --with-apr=/usr/bin/apr-1-config --with-java-home=/usr/lib/jvm/java-1.8.0-openjdk --with-os-type=include/linux --with-ssl=yes --prefix=/usr/share/tomcat
+# cd /usr/share/tomcat/bin/tomcat-native-1.2.16-src/native
+# ./configure --with-apr=/usr/bin/apr-1-config --with-java-home=/usr/lib/jvm/java-1.8.0-openjdk --with-os-type=include/linux --with-ssl=yes --prefix=/usr/share/tomcat
 ```
   NOTE: Make sure the JDK specified by `--with-java-home` is an actual JDK and not just a JRE!
 * Fix the include directory path in the generated makefile  
     - In the `INCLUDES` directive change `-I/usr/lib/jvm/java-1.8.0-openjdk/include/include/linux` to `-I/usr/lib/jvm/java-1.8.0-openjdk/include/linux`    
 * Compile the code  
 ```
-make && make install
+# make && make install
 ```
   There should now be a `libtcnative` shared library in `/usr/share/tomcat/lib`
 * Get tomcat to load the shared library. Create a file, `/usr/share/tomcat/conf/conf.d/loadapr.conf`, with the following lines:  
