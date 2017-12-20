@@ -7,7 +7,7 @@ yum group install "Development Tools"
 ```
 yum install openssl-devel apr-devel
 ```
-* Download the source code for the Apache Tomcat Native Library (because we installed Tomcat with yum, the source TAR is not present in `$CATALINA_HOME/bin`)  
+* Download the source code for the Apache Tomcat Native Library (because we installed Tomcat with yum, the source tarball is not present in `$CATALINA_HOME/bin`)  
 ```
 cd /usr/share/tomcat/bin
 curl -O http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-connectors/native/1.2.16/source/tomcat-native-1.2.16-src.tar.gz
