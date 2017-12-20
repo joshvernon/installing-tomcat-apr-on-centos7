@@ -21,7 +21,7 @@
   NOTE: Make sure the JDK specified by `--with-java-home` is an actual JDK and not just a JRE!
 * Fix the include directory path in the generated makefile  
     - In the `INCLUDES` directive change `-I/usr/lib/jvm/java-1.8.0-openjdk/include/include/linux` to `-I/usr/lib/jvm/java-1.8.0-openjdk/include/linux`    
-* Compile the code  
+* Build the code  
 ```
 # make && make install
 ```
